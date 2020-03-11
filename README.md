@@ -1,24 +1,33 @@
-# README
+# Movies Game - API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
 
-Things you may want to cover:
+```
+Ruby 2.6.5
+Rails 6.0.1
+Postgres >= 9.1
+```
 
-* Ruby version
+## Installing
 
-* System dependencies
+Clone the project.
+```console
+$ git clone git@github.com:edumoreira1506/movies-game-api.git
+$ cd movies-game-api
+```
 
-* Configuration
+Copy the contents of the `.env.example` and `database.yml.example` to `.env` and `database.yml` then change with the credentials of your local environment.
 
-* Database creation
+```console
+$ cp .env.example .env
+$ cp config/database.yml.example config/database.yml
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Install gems and packages, setup the database and run.
+```console
+$ bundle install
+$ yarn install
+$ rails db:setup
+$ bundle exec rspec
+$ rails s
+```
