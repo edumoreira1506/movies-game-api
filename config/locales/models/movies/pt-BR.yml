@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      movie:
+        one: Filme
+        other: Filmes
+    attributes:
+      movie:
+        name: Nome
+        created_at: Criado em
+        updated_at: Atualizado em
