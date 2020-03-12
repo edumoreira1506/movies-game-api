@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: 'admin/dashboard#index'
+
+  namespace :api do
+    get '/setup', to: 'game#index'
+  end
 end
