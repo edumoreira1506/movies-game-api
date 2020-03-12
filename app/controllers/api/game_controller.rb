@@ -1,5 +1,8 @@
 class Api::GameController < Api::ApiController
   def index
-    render json: { ok: true }
+    sentences = Sentence.game
+    quizzes = helpers.fill_with_answers(sentences)
+
+    render json: { ok: true, quizzes: quizzes }
   end
 end
