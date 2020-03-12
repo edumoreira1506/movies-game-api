@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      sentence:
+        one: Frase
+        other: Frases
+    attributes:
+      sentence:
+        content: Conteúdo da frase
+        created_at: Criado em
+        updated_at: Atualizado em
