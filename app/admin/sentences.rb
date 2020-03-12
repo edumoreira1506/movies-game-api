@@ -9,6 +9,9 @@ ActiveAdmin.register Sentence do
     column :content do |sentence|
       link_to sentence.content, admin_sentence_path(sentence)
     end
+    column :movie do |sentence|
+      link_to sentence.movie.name, admin_movie_path(sentence.movie)
+    end
     actions
   end
 
