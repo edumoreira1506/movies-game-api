@@ -25,9 +25,14 @@ $ cp config/database.yml.example config/database.yml
 
 Install gems and packages, setup the database and run.
 ```console
-$ bundle install
-$ yarn install
+$ bundle
+$ yarn
 $ rails db:setup
-$ bundle exec rspec
 $ rails s
+```
+
+Admin access:
+```
+Email: admin@example.com
+Password: password
 ```
