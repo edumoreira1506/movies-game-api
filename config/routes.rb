@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get '/setup', to: 'game#index'
+
+    resources :ranking, only: [:index, :create]
   end
 end
