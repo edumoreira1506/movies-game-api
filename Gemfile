@@ -15,6 +15,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'activeadmin', '~> 2.6'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'arctic_admin'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
