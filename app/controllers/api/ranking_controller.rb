@@ -6,9 +6,21 @@ class Api::RankingController < Api::ApiController
   end
 
   def create
-    ranking_user = RankingUser.new(name: params[:name], points: params[:points])
-    ranking_user.save!
+    name = params[:name]
+    points = params[:points]
 
-    render json: { ok: true, ranking_user: ranking_user }
+    if RankingUser.exists?(["lower(name) = ?", name.downcase])
+      ranking_user = RankingUser.where(["lower(name) = ?", name.downcase])
+      ranking_user = ranking_user[0]
+      ranking_user.points = points
+      ranking_user.save!
+
+      render json: { ok: true, ranking_user: ranking_user }
+    else
+      ranking_user = RankingUser.new(name: name, points: points)
+      ranking_user.save!
+
+      render json: { ok: true, ranking_user: ranking_user }
+    end
   end
 end
