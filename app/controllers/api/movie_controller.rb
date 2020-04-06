@@ -5,7 +5,7 @@ class Api::MovieController < Api::ApiController
     category = Category.find(params[:id])
     movies_ids = category.movies.map { |movie| movie.id }
     sentences = Sentence.in_movies(movies_ids).first(AMOUNT_OF_SENTENCES)
-    quizzes = helpers.fill_with_answers(sentences)
+    quizzes = helpers.fill_with_answers(sentences, category.movies)
 
     render json: { ok: true, quizzes: quizzes }
   end
