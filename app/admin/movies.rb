@@ -9,6 +9,11 @@ ActiveAdmin.register Movie do
     column :name do |movie|
       link_to movie.name, admin_movie_path(movie)
     end
+    column :category do |movie|
+      if movie.category
+        link_to movie.category.name, admin_category_path(movie.category)
+      end
+    end
     actions
   end
 
