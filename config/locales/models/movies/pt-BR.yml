@@ -7,5 +7,6 @@ pt-BR:
     attributes:
       movie:
         name: Nome
+        category: Categoria
         created_at: Criado em
         updated_at: Atualizado em
