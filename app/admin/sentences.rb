@@ -18,7 +18,7 @@ ActiveAdmin.register Sentence do
   form do |f|
     f.inputs do
       f.input :content
-      f.input :movie_id, as: :select, collection: Movie.all, :include_blank => false
+      f.input :movie_id, as: :select, collection: Movie.sorted, :include_blank => false
     end
     f.actions
   end

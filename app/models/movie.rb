@@ -8,4 +8,5 @@ class Movie < ApplicationRecord
   scope :different_movies, -> (movie) {
     where("id <> ?", movie.id).limit(AMOUNT_OF_MOVIES)
   }
+  scope :sorted, -> { order(name: :asc) }
 end

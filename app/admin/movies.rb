@@ -20,7 +20,7 @@ ActiveAdmin.register Movie do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :category_id, as: :select, collection: Category.all, :include_blank => false
+      f.input :category_id, as: :select, collection: Category.sorted, :include_blank => false
     end
     f.actions
   end
