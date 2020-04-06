@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_06_130625) do
+ActiveRecord::Schema.define(version: 2020_04_06_131737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_04_06_130625) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_movies_on_category_id"
   end
 
   create_table "ranking_users", force: :cascade do |t|
@@ -55,5 +57,6 @@ ActiveRecord::Schema.define(version: 2020_04_06_130625) do
     t.index ["movie_id"], name: "index_sentences_on_movie_id"
   end
 
+  add_foreign_key "movies", "categories"
   add_foreign_key "sentences", "movies"
 end
